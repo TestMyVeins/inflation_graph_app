@@ -1,4 +1,25 @@
 <div class="container">
   <h1>Inflation Graph Page</h1>
-  <p>Website containing information about inflation in Poland.</p>
+
+  <blockquote class="blockquote text-center">
+    <p class="mb-0">Inflation - the process of increasing the average price level in an economy. The result of this process is a decrease in the purchasing power of national money.</p>
+  </blockquote>
+
+  <p>Website containing information about inflation in <b>Poland</b>.</p>
+
+  <%= line_chart(@inflation_hash, xtitle: "Date", ytitle: "Inflation") %>
+
+  <div class='d-flex justify-content-center mt-3'>
+    <i>Data confirmed and verified by <a href='https://stat.gov.pl/' target=_blank >Główny Urząd Statystyczny</a></i>
+  </div>
+
+  
+  <h2 class='mt-4 '>Other visualisations:</h2>
+  <h3 class='text-center my-4'>Size of inflation</h3>
+  <%= pie_chart @inflation_hash %>
+  <h3 class='text-center my-4'>Horizontally</h3>
+  <%= column_chart @inflation_hash %>
+  <h3 class='text-center my-4'>Vertically</h3>
+  <%= bar_chart @inflation_hash %>
+
 </div>
